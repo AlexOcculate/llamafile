@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <meta name="robots" content="noindex">
+    <meta http-equiv="refresh" content="0; url=https://docs.mozilla.ai/llamafile/">
+    <script>
+      const docsBaseUrl = new URL("https://docs.mozilla.ai/llamafile/");
+      const pagesBasePath = "/llamafile";
+      const redirectTargets = {"": "https://docs.mozilla.ai/llamafile/", "AGENTS": "https://github.com/mozilla-ai/llamafile/blob/main/docs/AGENTS.md", "agents": "https://github.com/mozilla-ai/llamafile/blob/main/docs/AGENTS.md", "building-dlls": "https://docs.mozilla.ai/llamafile/using-llamafile/building_dlls/", "building_dlls": "https://docs.mozilla.ai/llamafile/using-llamafile/building_dlls/", "commands/build": "https://github.com/mozilla-ai/llamafile/blob/main/docs/commands/build.md", "commands/check": "https://github.com/mozilla-ai/llamafile/blob/main/docs/commands/check.md", "commands/clean": "https://github.com/mozilla-ai/llamafile/blob/main/docs/commands/clean.md", "creating-llamafiles": "https://docs.mozilla.ai/llamafile/using-llamafile/creating_llamafiles/", "creating_llamafiles": "https://docs.mozilla.ai/llamafile/using-llamafile/creating_llamafiles/", "example-llamafiles": "https://docs.mozilla.ai/llamafile/getting-started/pre-built-llamafiles/", "example_llamafiles": "https://docs.mozilla.ai/llamafile/getting-started/pre-built-llamafiles/", "pre-built-llamafiles": "https://docs.mozilla.ai/llamafile/getting-started/pre-built-llamafiles/", "pre_built_llamafiles": "https://docs.mozilla.ai/llamafile/getting-started/pre-built-llamafiles/", "quickstart": "https://docs.mozilla.ai/llamafile/getting-started/quickstart/", "running-llamafile": "https://docs.mozilla.ai/llamafile/using-llamafile/running_llamafile/", "running_llamafile": "https://docs.mozilla.ai/llamafile/using-llamafile/running_llamafile/", "skills/llamafile/SKILL": "https://github.com/mozilla-ai/llamafile/blob/main/docs/skills/llamafile/SKILL.md", "skills/llamafile/architecture": "https://github.com/mozilla-ai/llamafile/blob/main/docs/skills/llamafile/architecture.md", "skills/llamafile/building": "https://github.com/mozilla-ai/llamafile/blob/main/docs/skills/llamafile/building.md", "skills/llamafile/development": "https://github.com/mozilla-ai/llamafile/blob/main/docs/skills/llamafile/development.md", "skills/llamafile/skill": "https://github.com/mozilla-ai/llamafile/blob/main/docs/skills/llamafile/SKILL.md", "skills/llamafile/testing": "https://github.com/mozilla-ai/llamafile/blob/main/docs/skills/llamafile/testing.md", "skills/llamafile/update-llamacpp": "https://github.com/mozilla-ai/llamafile/blob/main/docs/skills/llamafile/update_llamacpp.md", "skills/llamafile/update_llamacpp": "https://github.com/mozilla-ai/llamafile/blob/main/docs/skills/llamafile/update_llamacpp.md", "source-installation": "https://docs.mozilla.ai/llamafile/using-llamafile/source_installation/", "source_installation": "https://docs.mozilla.ai/llamafile/using-llamafile/source_installation/", "support": "https://docs.mozilla.ai/llamafile/reference/support/", "technical-details": "https://docs.mozilla.ai/llamafile/reference/technical_details/", "technical_details": "https://docs.mozilla.ai/llamafile/reference/technical_details/", "troubleshooting": "https://docs.mozilla.ai/llamafile/reference/troubleshooting/", "whisperfile": "https://docs.mozilla.ai/llamafile/whisperfile/", "whisperfile/getting-started": "https://docs.mozilla.ai/llamafile/whisperfile/getting-started/", "whisperfile/getting_started": "https://docs.mozilla.ai/llamafile/whisperfile/getting-started/", "whisperfile/gpu": "https://docs.mozilla.ai/llamafile/whisperfile/gpu/", "whisperfile/packaging": "https://docs.mozilla.ai/llamafile/whisperfile/packaging/", "whisperfile/server": "https://docs.mozilla.ai/llamafile/whisperfile/server/", "whisperfile/translate": "https://docs.mozilla.ai/llamafile/whisperfile/translate/"};
+
+      function normalizeRoute(pathname) {
+        let relativePath = pathname;
+
+        if (relativePath === pagesBasePath) {
+          relativePath = "/";
+        } else if (relativePath.startsWith(`${pagesBasePath}/`)) {
+          relativePath = relativePath.slice(pagesBasePath.length);
+        }
+
+        if (relativePath.endsWith("/index.html")) {
+          relativePath = relativePath.slice(0, -"/index.html".length) || "/";
+        } else if (relativePath.endsWith(".html")) {
+          relativePath = relativePath.slice(0, -".html".length);
+        }
+
+        return relativePath.replace(/^\/+|\/+$/g, "");
+      }
+
+      const route = normalizeRoute(window.location.pathname);
+      const destination = redirectTargets[route] || docsBaseUrl.toString();
+      const target = new URL(destination);
+      target.search = window.location.search;
+      target.hash = window.location.hash;
+      window.location.replace(target.toString());
+    </script>
+  </head>
+  <body>
+    <p>This documentation moved to <a href="https://docs.mozilla.ai/llamafile/">https://docs.mozilla.ai/llamafile/</a>.</p>
+  </body>
+</html>
